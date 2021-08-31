@@ -1,0 +1,7 @@
+sttest:
+  name: st
+  age: 18
+  hobby: read,write
+#  hobby:
+#    - read
+#    - write
