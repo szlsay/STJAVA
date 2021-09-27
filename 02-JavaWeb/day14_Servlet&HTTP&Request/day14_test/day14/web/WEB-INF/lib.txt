@@ -1,0 +1,1 @@
+commons-beanutils-1.8.0.jarcommons-logging-1.2.jardruid-1.0.9.jarhamcrest-core-1.3.jarj2ee.jarjunit-4.12.jarmchange-commons-java-0.2.12.jarmysql-connector-java-5.1.37-bin.jarservlet-api.jarspring-beans-5.0.0.RELEASE.jarspring-core-5.0.0.RELEASE.jarspring-jdbc-5.0.0.RELEASE.jarspring-tx-5.0.0.RELEASE.jar

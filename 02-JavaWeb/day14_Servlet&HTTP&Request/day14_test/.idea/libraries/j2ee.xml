@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="j2ee">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/day14/web/WEB-INF/lib/j2ee.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
