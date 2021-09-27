@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9e9e7b8b-7e97-48c2-8ea8-0212e8e7c9dc" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/artifacts/day13_Web_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/J2EE_1_4_J2EE_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day13/day13.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day13/src/itcast/web/servlet/ServletDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day13/src/itcast/web/servlet/ServletDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day13/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day13/web/hehe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day13/web/hello.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day13/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day12-Xml/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day12-Xml/out/production/day12/itcast/xml/dtd/student.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day12-Xml/out/production/day12/itcast/xml/dtd/student.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day12-Xml/out/production/day12/itcast/xml/schema/student.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day12-Xml/out/production/day12/itcast/xml/schema/student.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day12-Xml/out/production/day12/student.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1yiGEJRSboLAl4S33W3Tv6lTN5E" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="9e9e7b8b-7e97-48c2-8ea8-0212e8e7c9dc" name="默认变更列表" comment="" />
+      <created>1632726881766</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632726881766</updated>
+      <workItem from="1632726882940" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
