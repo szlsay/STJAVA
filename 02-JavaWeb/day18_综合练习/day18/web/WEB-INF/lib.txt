@@ -1,0 +1,1 @@
+c3p0-0.9.1.2.jarcommons-beanutils-1.8.3.jarcommons-logging-1.1.1.jardruid-1.0.9.jarjavax.servlet.jsp.jstl.jarjstl-impl.jarmysql-connector-java-5.1.18-bin.jarspring-beans-4.2.4.RELEASE.jarspring-core-4.2.4.RELEASE.jarspring-jdbc-4.2.4.RELEASE.jarspring-tx-4.2.4.RELEASE.jar

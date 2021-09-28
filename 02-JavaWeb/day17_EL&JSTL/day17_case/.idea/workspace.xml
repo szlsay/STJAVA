@@ -6,42 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51b0052c-3eea-4c98-b8a0-64cfe4431af6" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/day17_Web_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/c3p0_0_9_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/servlet_api.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/day17.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/cn/itcast/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/cn/itcast/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/cn/itcast/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/cn/itcast/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/cn/itcast/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/cn/itcast/util/JDBCUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/cn/itcast/web/servlet/UserListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/src/druid.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/css/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/css/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/js/jquery-2.1.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day17/web/update.html" afterDir="false" />
-    </list>
+    <list default="true" id="51b0052c-3eea-4c98-b8a0-64cfe4431af6" name="默认变更列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -279,7 +244,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632819407081</updated>
-      <workItem from="1632819408207" duration="488000" />
+      <workItem from="1632819408207" duration="682000" />
     </task>
     <servers />
   </component>
