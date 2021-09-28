@@ -1,0 +1,12 @@
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/c3p0-0.9.1.2.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/commons-beanutils-1.8.3.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/commons-logging-1.1.1.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/druid-1.0.9.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/javax.servlet.jsp.jstl.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/jstl-impl.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/mysql-connector-java-5.1.18-bin.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/servlet-api.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/spring-beans-4.2.4.RELEASE.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/spring-core-4.2.4.RELEASE.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/spring-jdbc-4.2.4.RELEASE.jar
+/Users/ylmac/github/STJAVA/02-JavaWeb/day17_EL&JSTL/day17_case/day17/web/WEB-INF/lib/spring-tx-4.2.4.RELEASE.jar
