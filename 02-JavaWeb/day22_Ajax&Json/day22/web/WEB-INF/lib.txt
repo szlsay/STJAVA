@@ -1,0 +1,1 @@
+jackson-annotations-2.2.3.jarjackson-core-2.2.3.jarjackson-databind-2.2.3.jarjunit-4.12.jarservlet-api.jar
