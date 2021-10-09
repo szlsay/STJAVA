@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring_tx" />
         <module name="spring_jdbc" />
+        <module name="spring_tx_anno" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring_jdbc" target="1.8" />
       <module name="spring_tx" target="1.8" />
+      <module name="spring_tx_anno" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
