@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="657e9e14-d026-4d20-bec0-16d7bd5555ad" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/spring_aop_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/spring_aop_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/spring-aop.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/anno/MyAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/anno/Target.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/anno/TargetInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/aop/MyAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/aop/Target.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/aop/TargetInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/proxy/cglib/Advice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/proxy/cglib/ProxyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/proxy/cglib/Target.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/proxy/jdk/Advice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/proxy/jdk/ProxyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/proxy/jdk/Target.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/itheima/proxy/jdk/TargetInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/resources/applicationContext-anno.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/test/java/com/itheima/test/AnnoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-aop/src/test/java/com/itheima/test/AopTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="mavenHome" value="$USER_HOME$/apache-maven-3.8.3" />
+        <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="openjdk-17" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="openjdk-17" />
+  </component>
+  <component name="ProjectId" id="1zGMzbTpzTN7Vu8vTeTqpckKRUm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-aop/src/test/java" />
+    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-aop/src/test/java" />
+      <recent name="$PROJECT_DIR$/spring-aop/src/main/resources" />
+      <recent name="$PROJECT_DIR$/spring-aop/src/main/java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AopTest.test1">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnoTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-aop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.AnnoTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AopTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-aop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.AopTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AopTest.test1" />
+        <item itemvalue="JUnit.AnnoTest.test1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="657e9e14-d026-4d20-bec0-16d7bd5555ad" name="默认变更列表" comment="" />
+      <created>1633770235021</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633770235021</updated>
+      <workItem from="1633770236103" duration="379000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
