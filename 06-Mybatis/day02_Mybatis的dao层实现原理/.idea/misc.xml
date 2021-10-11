@@ -3,12 +3,14 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/mybatis_config" />
     <file type="web" url="file://$PROJECT_DIR$/mybatis_dao" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis_mapper" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/mybatis_config/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_dao/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis_mapper/pom.xml" />
       </list>
     </option>
   </component>
