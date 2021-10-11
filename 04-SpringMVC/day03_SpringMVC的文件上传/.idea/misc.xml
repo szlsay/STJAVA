@@ -3,12 +3,14 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/spring_exception" />
     <file type="web" url="file://$PROJECT_DIR$/spring_interceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/spring_interceptor/pom.xml" />
         <option value="$PROJECT_DIR$/spring_exception/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm/pom.xml" />
       </list>
     </option>
   </component>
