@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring_exception/spring_exception.iml" filepath="$PROJECT_DIR$/spring_exception/spring_exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_interceptor/spring_interceptor.iml" filepath="$PROJECT_DIR$/spring_interceptor/spring_interceptor.iml" />
     </modules>
   </component>
