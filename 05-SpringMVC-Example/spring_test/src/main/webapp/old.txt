@@ -1,0 +1,1 @@
+img plugins文件夹被移除
