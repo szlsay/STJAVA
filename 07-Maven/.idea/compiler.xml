@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="maven_ssm" />
         <module name="maven_demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="maven_demo" target="1.8" />
+      <module name="maven_ssm" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/maven_demo/maven_demo.iml" filepath="$PROJECT_DIR$/maven_demo/maven_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven_ssm/maven_ssm.iml" filepath="$PROJECT_DIR$/maven_ssm/maven_ssm.iml" />
     </modules>
   </component>
 </project>
