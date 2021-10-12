@@ -7,12 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="maven_ssm" />
+        <module name="maven_service" />
+        <module name="maven_web" />
         <module name="maven_demo" />
+        <module name="maven_dao" />
+        <module name="maven_pojo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="maven_dao" target="1.8" />
       <module name="maven_demo" target="1.8" />
+      <module name="maven_parent" target="1.8" />
+      <module name="maven_pojo" target="1.8" />
+      <module name="maven_service" target="1.8" />
       <module name="maven_ssm" target="1.8" />
+      <module name="maven_web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
