@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [13/Oct/2021:15:56:03 +0800] "GET /hello/rule HTTP/1.1" 404 971 http-bio-80-exec-1 20
+0:0:0:0:0:0:0:1 - - [13/Oct/2021:15:56:04 +0800] "GET /hello/rule HTTP/1.1" 404 971 http-bio-80-exec-3 2
+0:0:0:0:0:0:0:1 - - [13/Oct/2021:15:56:49 +0800] "GET /hello/rule HTTP/1.1" 404 971 http-bio-80-exec-4 2
+0:0:0:0:0:0:0:1 - - [13/Oct/2021:15:56:50 +0800] "GET /hello/rule HTTP/1.1" 404 971 http-bio-80-exec-5 1
+0:0:0:0:0:0:0:1 - - [13/Oct/2021:15:56:50 +0800] "GET /hello/rule HTTP/1.1" 404 971 http-bio-80-exec-6 1
+0:0:0:0:0:0:0:1 - - [13/Oct/2021:15:56:50 +0800] "GET /hello/rule HTTP/1.1" 404 971 http-bio-80-exec-7 1
+0:0:0:0:0:0:0:1 - - [13/Oct/2021:15:57:38 +0800] "GET /hello/rule.do HTTP/1.1" 404 967 http-bio-80-exec-8 87

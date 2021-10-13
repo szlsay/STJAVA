@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="drools_springweb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>drools_springweb</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="drools_springweb-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="drools_springweb:war exploded" />
+    </root>
+  </artifact>
+</component>
