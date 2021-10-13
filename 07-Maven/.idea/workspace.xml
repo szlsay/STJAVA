@@ -9,53 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6e3ca7-b7dd-4af7-9bc6-faef3619dbbf" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_dao_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_dao_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_parent_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_parent_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_pojo_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_pojo_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_service_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_service_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_web_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/maven_web_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_dao/maven_dao.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_dao/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_dao/src/main/java/com/itheima/ssm/dao/ItemMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_dao/src/main/resources/applicationContext-dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_dao/src/main/resources/com/itheima/ssm/dao/ItemMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_parent.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_pojo/maven_pojo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_pojo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_pojo/src/main/java/com/itheima/ssm/pojo/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_service/maven_service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_service/src/main/java/com/itheima/ssm/service/ItemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_service/src/main/java/com/itheima/ssm/service/ItemServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_service/src/main/resources/applicationContext-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_web/maven_web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_web/src/main/java/com/itheima/ssm/controller/ItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_web/src/main/resources/springmvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_web/src/main/webapp/WEB-INF/jsp/item.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/maven_web/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maven_parent/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maven_ssm/target/maven_ssm/WEB-INF/jsp/item.jsp" beforeDir="false" />
-    </list>
+    <list default="true" id="0a6e3ca7-b7dd-4af7-9bc6-faef3619dbbf" name="默认变更列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -332,7 +286,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634026452210</updated>
-      <workItem from="1634026455165" duration="4259000" />
+      <workItem from="1634026455165" duration="4323000" />
     </task>
     <servers />
   </component>

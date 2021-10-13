@@ -1,0 +1,9 @@
+//当前规则文件用于测试date-expires属性
+package testdateexpires
+
+rule "rule_dateexpires_1"
+    date-expires "2019-10-10 10:00"//date-expires属性用于指定当前规则的失效时间
+    when
+    then
+        System.out.println("规则：rule_dateexpires_1触发了...");
+end
