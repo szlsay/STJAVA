@@ -19,6 +19,6 @@ public class ItemController {
         System.out.println(id);
         Item item = itemService.findById(id);
         model.addAttribute("item",item);
-        return "item";
+        return "/item";
     }
 }
