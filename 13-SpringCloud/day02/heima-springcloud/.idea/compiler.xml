@@ -15,12 +15,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="config-server" target="8" />
+      <module name="config-server" target="1.8" />
       <module name="consumer-demo" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="heima-gateway" target="1.8" />
       <module name="heima-springcloud" target="1.8" />
-      <module name="user-service" target="8" />
+      <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
