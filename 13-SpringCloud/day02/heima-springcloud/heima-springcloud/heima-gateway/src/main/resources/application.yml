@@ -15,41 +15,41 @@ spring:
           # 路由断言： 可以匹配映射路径
           predicates:
             #- Path=/user/**
-            - Path=/**
-            #- Path=/api/user/**
+            #- Path=/**
+            - Path=/api/user/**
           filters:
             # 添加请求路径的前缀
-            - PrefixPath=/user
+            #- PrefixPath=/user
             #1表示过滤1个路径，2表示两个路径，以此类推
-            #- StripPrefix=1
-            #- MyParam=name
-#      # 默认过滤器，对所有路由都生效
-#      default-filters:
-#        - AddResponseHeader=X-Response-Foo, Bar
-#        - AddResponseHeader=abc-myname,heima
-#      globalcors:
-#        corsConfigurations:
-#          '[/**]':
-#            #allowedOrigins: * # 这种写法或者下面的都可以，*表示全部
-#            allowedOrigins:
-#              - "http://docs.spring.io"
-#            allowedMethods:
-#              - GET
+            - StripPrefix=1
+            - MyParam=name
+      # 默认过滤器，对所有路由都生效
+      default-filters:
+        - AddResponseHeader=X-Response-Foo, Bar
+        - AddResponseHeader=abc-myname,heima
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            #allowedOrigins: * # 这种写法或者下面的都可以，*表示全部
+            allowedOrigins:
+              - "http://docs.spring.io"
+            allowedMethods:
+              - GET
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
   instance:
     prefer-ip-address: true
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 6000
-#ribbon:
-#  ConnectTimeout: 1000
-#  ReadTimeout: 2000
-#  MaxAutoRetries: 0
-#  MaxAutoRetriesNextServer: 0
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+ribbon:
+  ConnectTimeout: 1000
+  ReadTimeout: 2000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
