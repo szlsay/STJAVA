@@ -23,7 +23,7 @@ public class ArticleService {
     private IdWorker idWorker;
 
     public List<Article> findAll() {
-//        Article article = articleDao.selectById(1);
+        Article article = articleDao.selectById(1);
         return articleDao.selectList(null);
     }
 

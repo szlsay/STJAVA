@@ -23,7 +23,8 @@ public class ArticleController {
     //测试公共异常处理
     @RequestMapping(value = "exception", method = RequestMethod.GET)
     public Result test() {
-        int a = 1 / 0;
+//        int a = 1 / 0;
+
         return null;
     }
 
