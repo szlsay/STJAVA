@@ -2,11 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tensquare_article" />
+        <module name="tensquare_eureka" />
+        <module name="tensquare_encrypt" />
         <module name="tensquare_common" />
         <module name="mongo_demo" />
         <module name="tensquare_user" />
@@ -16,6 +19,8 @@
       <module name="mongo_demo" target="1.8" />
       <module name="tensquare_article" target="1.8" />
       <module name="tensquare_common" target="8" />
+      <module name="tensquare_encrypt" target="1.8" />
+      <module name="tensquare_eureka" target="1.8" />
       <module name="tensquare_parent" target="1.8" />
       <module name="tensquare_user" target="1.8" />
     </bytecodeTargetLevel>
@@ -25,6 +30,8 @@
       <module name="mongo_demo" options="-parameters" />
       <module name="tensquare_article" options="-parameters" />
       <module name="tensquare_common" options="-parameters" />
+      <module name="tensquare_encrypt" options="-parameters" />
+      <module name="tensquare_eureka" options="-parameters" />
       <module name="tensquare_parent" options="-parameters" />
       <module name="tensquare_user" options="-parameters" />
     </option>

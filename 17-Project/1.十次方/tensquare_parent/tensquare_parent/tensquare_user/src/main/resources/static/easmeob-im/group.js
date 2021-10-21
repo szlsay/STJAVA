@@ -20,7 +20,7 @@ $(function () {
             cursor: cursor || '',                           // 游标，第一次为空
             success: function (resp) {
                 console.log("Response: ", resp);
-                $('#gCursor').val() = resp.cursor;
+                $('#gCursor').val = resp.cursor;
             },
             error: function (e) { }
         };

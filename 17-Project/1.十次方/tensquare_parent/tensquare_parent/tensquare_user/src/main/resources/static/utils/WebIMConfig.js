@@ -47,9 +47,9 @@ var config = {
     /*
      * Application AppKey
      */
-    appkey: "easemob-demo#easeim",
+    // appkey: "easemob-demo#easeim",
     // appkey: "1108200309157490#bpttest",
-    
+    appkey: "1110211021152962#test",
 
     /*
      * Application Host

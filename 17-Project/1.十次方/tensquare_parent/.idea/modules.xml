@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/tensquare_parent/mongo_demo/mongo_demo.iml" filepath="$PROJECT_DIR$/tensquare_parent/mongo_demo/mongo_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/tensquare_parent/tensquare_article/tensquare_article.iml" filepath="$PROJECT_DIR$/tensquare_parent/tensquare_article/tensquare_article.iml" />
       <module fileurl="file://$PROJECT_DIR$/tensquare_parent/tensquare_common/tensquare_common.iml" filepath="$PROJECT_DIR$/tensquare_parent/tensquare_common/tensquare_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tensquare_parent/tensquare_encrypt/tensquare_encrypt.iml" filepath="$PROJECT_DIR$/tensquare_parent/tensquare_encrypt/tensquare_encrypt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tensquare_parent/tensquare_eureka/tensquare_eureka.iml" filepath="$PROJECT_DIR$/tensquare_parent/tensquare_eureka/tensquare_eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/tensquare_parent/tensquare_parent.iml" filepath="$PROJECT_DIR$/tensquare_parent/tensquare_parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/tensquare_parent/tensquare_user/tensquare_user.iml" filepath="$PROJECT_DIR$/tensquare_parent/tensquare_user/tensquare_user.iml" />
     </modules>
