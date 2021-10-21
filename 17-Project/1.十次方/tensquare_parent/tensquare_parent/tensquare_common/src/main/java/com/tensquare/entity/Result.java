@@ -1,41 +1,44 @@
-package entity;
+package com.tensquare.entity;
 
 public class Result {
-
-    private Boolean flag;
-    private Integer code;
+    //标示接口调用是否成功
+    private boolean flag;
+    //返回码
+    private int code;
+    //返回的信息
     private String message;
+    //调用接口返回的数据
     private Object data;
 
-    public Result() {
-    }
-
-    public Result(Boolean flag, Integer code, String message) {
-        this.flag = flag;
-        this.code = code;
-        this.message = message;
-    }
-
-    public Result(Boolean flag, Integer code, String message, Object data) {
+    public Result(boolean flag, int code, String message, Object data) {
         this.flag = flag;
         this.code = code;
         this.message = message;
         this.data = data;
     }
 
-    public Boolean getFlag() {
+    public Result(boolean flag, int code, String message) {
+        this.flag = flag;
+        this.code = code;
+        this.message = message;
+    }
+
+    public Result() {
+    }
+
+    public boolean isFlag() {
         return flag;
     }
 
-    public void setFlag(Boolean flag) {
+    public void setFlag(boolean flag) {
         this.flag = flag;
     }
 
-    public Integer getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
@@ -53,15 +56,5 @@ public class Result {
 
     public void setData(Object data) {
         this.data = data;
-    }
-
-    @Override
-    public String toString() {
-        return "Result{" +
-                "flag=" + flag +
-                ", code=" + code +
-                ", message='" + message + '\'' +
-                ", data=" + data +
-                '}';
     }
 }

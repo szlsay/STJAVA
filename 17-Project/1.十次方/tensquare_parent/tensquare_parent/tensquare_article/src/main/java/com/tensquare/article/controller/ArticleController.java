@@ -1,94 +1,128 @@
 package com.tensquare.article.controller;
 
-import com.baomidou.mybatisplus.plugins.Page;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tensquare.article.pojo.Article;
 import com.tensquare.article.service.ArticleService;
-import entity.PageResult;
-import entity.Result;
-import entity.StatusCode;
+import com.tensquare.entity.PageResult;
+import com.tensquare.entity.Result;
+import com.tensquare.entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
-
+/**
+ * 控制器层
+ * @author Administrator
+ *
+ */
 @RestController
-@RequestMapping("article")
 @CrossOrigin
+@RequestMapping("/article")
 public class ArticleController {
 
-    @Autowired
-    private ArticleService articleService;
+	@Autowired
+	private ArticleService articleService;
+	
+	
+	/**
+	 * 查询全部数据
+	 * @return
+	 */
+	@GetMapping
+	public Result findAll(){
+		return new Result(true,StatusCode.OK,"查询成功",articleService.findAll());
+	}
+	
+	/**
+	 * 根据ID查询
+	 * @param id ID
+	 * @return
+	 */
+	@GetMapping("/{id}")
+	public Result findById(@PathVariable String id){
+		return new Result(true,StatusCode.OK,"查询成功",articleService.findById(id));
+	}
 
-    //测试公共异常处理
-    @RequestMapping(value = "exception", method = RequestMethod.GET)
-    public Result test() {
-//        int a = 1 / 0;
 
-        return null;
+	/**
+	 * 分页+多条件查询
+	 * @param searchMap 查询条件封装
+	 * @param page 页码
+	 * @param size 页大小
+	 * @return 分页结果
+	 */
+	@PostMapping("/search/{page}/{size}")
+	public Result findSearch(@RequestBody Map searchMap , @PathVariable int page, @PathVariable int size){
+		IPage<Article> pageList = articleService.findSearch(searchMap, page, size);
+		return new Result(true,StatusCode.OK,"查询成功",  new PageResult<Article>((int) pageList.getTotal(), pageList.getRecords()) );
+	}
+
+	/**
+     * 根据条件查询
+     * @param searchMap
+     * @return
+     */
+    @PostMapping(value="/search")
+    public Result findSearch( @RequestBody Map searchMap){
+        return new Result(true,StatusCode.OK,"查询成功",articleService.findSearch(searchMap));
     }
+	
+	/**
+	 * 增加
+	 * @param article
+	 */
+	@PostMapping
+	public Result add(@RequestBody Article article  ){
+		articleService.add(article);
+		return new Result(true,StatusCode.OK,"增加成功");
+	}
+	
+	/**
+	 * 修改
+	 * @param article
+	 */
+	@PutMapping("/{id}")
+	public Result update(@RequestBody Article article, @PathVariable String id ){
+		article.setId(id);
+		articleService.update(article);		
+		return new Result(true,StatusCode.OK,"修改成功");
+	}
+	
+	/**
+	 * 删除
+	 * @param id
+	 */
+	@DeleteMapping(value="/{id}")
+	public Result delete(@PathVariable String id ){
+		articleService.deleteById(id);
+		return new Result(true,StatusCode.OK,"删除成功");
+	}
 
-    // POST /article/search/{page}/{size} 文章分页
-    @RequestMapping(value = "search/{page}/{size}", method = RequestMethod.POST)
-    //之前接受文章数据，使用pojo，但是现在根据条件查询
-    //而所有的条件都需要进行判断，遍历pojo的所有属性需要使用反射的方式，成本较高，性能较低
-    //直接使用集合的方式遍历，这里接受数据改为Map集合
-    public Result findByPage(@PathVariable Integer page,
-                             @PathVariable Integer size,
-                             @RequestBody Map<String, Object> map) {
-        //根据条件分页查询
-        Page<Article> pageData = articleService.findByPage(map, page, size);
+	/**
+	 * 文章审核
+	 * @param id
+	 * @return
+	 */
+	@PutMapping(value="/examine/{id}")
+	public Result examine(@PathVariable  String id){
+		articleService.examine(id);
+		return new Result(true,StatusCode.OK,"审核成功");
+	}
 
-        //封装分页返回对象
-        PageResult<Article> pageResult = new PageResult<>(
-                pageData.getTotal(), pageData.getRecords()
-        );
+	/**
+	 * 文章点赞
+	 * @param id
+	 * @return
+	 */
+	@PutMapping(value="/thumbup/{id}")
+	public Result updateThumpup(@PathVariable  String id){
+		articleService.updateThumpup(id);
+		return new Result(true,StatusCode.OK,"点赞成功");
+	}
 
-        //返回数据
-        return new Result(true, StatusCode.OK, "查询成功", pageResult);
-
-    }
-
-    // DELETE /article/{articleId} 根据ID删除文章
-    @RequestMapping(value = "{articleId}", method = RequestMethod.DELETE)
-    public Result deleteById(@PathVariable String articleId) {
-        articleService.deleteById(articleId);
-
-        return new Result(true, StatusCode.OK, "删除成功");
-    }
-
-
-    // PUT /article/{articleId} 修改文章
-    @RequestMapping(value = "{articleId}", method = RequestMethod.PUT)
-    public Result updateById(@PathVariable String articleId,
-                             @RequestBody Article article) {
-        //设置id
-        article.setId(articleId);
-        // 执行修改
-        articleService.updateById(article);
-
-        return new Result(true, StatusCode.OK, "修改成功");
-    }
-
-    // POST /article 增加文章
-    @RequestMapping(method = RequestMethod.POST)
-    public Result save(@RequestBody Article article) {
-        articleService.save(article);
-        return new Result(true, StatusCode.OK, "新增成功");
-    }
-
-
-    // GET /article/{articleId} 根据ID查询文章
-    @RequestMapping(value = "{articleId}", method = RequestMethod.GET)
-    public Result findById(@PathVariable String articleId) {
-        Article article = articleService.findById(articleId);
-        return new Result(true, StatusCode.OK, "查询成功", article);
-    }
-
-    // GET /article 文章全部列表
-    @RequestMapping(method = RequestMethod.GET)
-    public Result findAll() {
-        List<Article> list = articleService.findAll();
-        return new Result(true, StatusCode.OK, "查询成功", list);
-    }
+	@GetMapping(value="/exception")
+	public Result exception() throws Exception {
+		throw new Exception("测试统一异常处理");
+	}
+	
 }

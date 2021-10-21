@@ -18,7 +18,7 @@
     <bytecodeTargetLevel>
       <module name="mongo_demo" target="1.8" />
       <module name="tensquare_article" target="1.8" />
-      <module name="tensquare_common" target="8" />
+      <module name="tensquare_common" target="1.8" />
       <module name="tensquare_encrypt" target="1.8" />
       <module name="tensquare_eureka" target="1.8" />
       <module name="tensquare_parent" target="1.8" />

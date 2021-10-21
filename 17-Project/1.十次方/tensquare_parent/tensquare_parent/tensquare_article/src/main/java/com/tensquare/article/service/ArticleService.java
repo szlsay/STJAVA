@@ -1,90 +1,136 @@
 package com.tensquare.article.service;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.plugins.Page;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tensquare.article.dao.ArticleDao;
 import com.tensquare.article.pojo.Article;
+import com.tensquare.util.IdWorker;
+import com.tensquare.util.MybatisPlusPubFuns;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import util.IdWorker;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
+/**
+ * 服务层
+ * 
+ * @author Administrator
+ *
+ */
 @Service
 public class ArticleService {
 
-    @Autowired
-    private ArticleDao articleDao;
+	@Autowired
+	private ArticleDao articleDao;
+	
+	@Autowired
+	private IdWorker idWorker;
 
-    @Autowired
-    private IdWorker idWorker;
+	/**
+	 * 查询全部列表
+	 * @return
+	 */
+	public List<Article> findAll() {
+		return articleDao.selectList(null);
+	}
 
-    public List<Article> findAll() {
-        Article article = articleDao.selectById(1);
-        return articleDao.selectList(null);
-    }
+	
+	/**
+	 * 条件查询+分页
+	 * @param whereMap
+	 * @param page
+	 * @param size
+	 * @return
+	 */
+	public IPage<Article> findSearch(Map whereMap, int page, int size) {
+		QueryWrapper<Article> wapper = MybatisPlusPubFuns.createEntityWrapper(whereMap);
+		// 执行查询
+		IPage<Article> p = new Page<Article>(page, size);
+		p = articleDao.selectPage(p, wapper);
+		return p;
+	}
 
-    public Article findById(String articleId) {
-        return articleDao.selectById(articleId);
-    }
+	
+	/**
+	 * 条件查询
+	 * @param whereMap
+	 * @return
+	 */
+	public List<Article> findSearch(Map whereMap) {
+		QueryWrapper<Article> wapper = MybatisPlusPubFuns.createEntityWrapper(whereMap);
+		return articleDao.selectList(wapper);
+	}
 
-    public void save(Article article) {
-        //使用分布式id生成器
-        String id = idWorker.nextId() + "";
-        article.setId(id);
 
-        //初始化数据
-        article.setVisits(0);   //浏览量
-        article.setThumbup(0);  //点赞数
-        article.setComment(0);  //评论数
+	@Autowired
+	private RedisTemplate redisTemplate;
 
-        //新增
-        articleDao.insert(article);
-    }
+	/**
+	 * 根据ID查询实体
+	 * @param id
+	 * @return
+	 */
+	public Article findById(String id) {
+		Article article= (Article)redisTemplate.opsForValue().get("article_"+id);
+		if(article==null){
+			article=articleDao.selectById(id);//从数据库中查询
+			redisTemplate.opsForValue().set("article_"+id,article,10, TimeUnit.SECONDS);//放入缓存
 
-    public void updateById(Article article) {
-        // 根据主键id修改
-        articleDao.updateById(article);
+			System.out.println("从数据库中查询并放入缓存");
+		}else{
+			System.out.println("从缓存中提取数据");
+		}
+		return article;
+	}
 
-        // 根据条件修改
-        // 创建条件对象
-        // EntityWrapper<Article> wrapper = new EntityWrapper<>();
-        // 设置条件
-        // wrapper.eq("id", article.getId());
-        // articleDao.update(article, wrapper);
-    }
+	/**
+	 * 增加
+	 * @param article
+	 */
+	public void add(Article article) {
+		article.setId( idWorker.nextId()+"" );
+		articleDao.insert(article);
+	}
 
-    public void deleteById(String articleId) {
-        articleDao.deleteById(articleId);
-    }
+	/**
+	 * 修改
+	 * @param article
+	 */
+	public void update(Article article) {
+		redisTemplate.delete("article_"+article.getId());
+		articleDao.updateById(article);
+	}
 
-    public Page<Article> findByPage(Map<String, Object> map, Integer page, Integer size) {
-        //设置查询条件
-        EntityWrapper<Article> wrapper = new EntityWrapper<>();
-        Set<String> keySet = map.keySet();
-        for (String key : keySet) {
-            // if (map.get(key) != null) {
-            //     wrapper.eq(key, map.get(key));
-            // }
+	/**
+	 * 删除
+	 * @param id
+	 */
+	public void deleteById(String id) {
+		redisTemplate.delete("article_"+id);
+		articleDao.deleteById(id);
+	}
 
-            //第一个参数是否把后面的条件加入到查询条件中
-            //和上面的if判断的写法是一样的效果，实现动态sql
-            wrapper.eq(map.get(key) != null, key, map.get(key));
-        }
+	/**
+	 * 文章审核
+	 * @param id
+	 */
+	@Transactional
+	public void examine(String id){
+		articleDao.examine(id);
+	}
 
-        //设置分页参数
-        Page<Article> pageData = new Page<>(page, size);
+	/**
+	 * 点赞
+	 * @param id
+	 */
+	@Transactional
+	public void updateThumpup(String id){
+		articleDao.updateThumbup(id);
+	}
 
-        //执行查询
-        //第一个是分页参数，第二个是查询条件
-        List<Article> list = articleDao.selectPage(pageData, wrapper);
-
-        pageData.setRecords(list);
-
-        //返回
-        return pageData;
-    }
 }
