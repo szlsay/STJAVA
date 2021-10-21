@@ -45,8 +45,6 @@ public class MyWebSocketHandler implements WebSocketHandler {
 			throws Exception {
 		Long uid = (Long) session.getAttributes().get("uid");
 		String username=loginservice.getnamebyid(uid);
-
-		System.out.println("afterConnectionEstablished: " + username);
 		if (userSocketSessionMap.get(uid) == null) {
 			userSocketSessionMap.put(uid, session);
 			Message msg = new Message();
@@ -154,7 +152,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
 	/**
 	 * 给某个用户发送消息
 	 * 
-	 * @param
+	 * @param userName
 	 * @param message
 	 * @throws IOException
 	 */

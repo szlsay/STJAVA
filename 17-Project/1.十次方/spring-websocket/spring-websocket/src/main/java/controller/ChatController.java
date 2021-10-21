@@ -40,7 +40,6 @@ public class ChatController {
 		Set<Long> set=map.keySet();
 		Iterator<Long> it = set.iterator();
 		Set<String> nameset=new HashSet<String>();
-		System.out.println("onlineusers: " + nameset);
 		while(it.hasNext()){
 			Long entry = it.next();
 			String name=loginservice.getnamebyid(entry);

@@ -67,13 +67,13 @@ body{
         // 指定websocket路径
         var websocket;
         if ('WebSocket' in window) {
-			websocket = new WebSocket("ws://localhost:8080/Spring-websocket/ws?uid="+${sessionScope.uid});
+			websocket = new WebSocket("ws://localhost:8080/spring_websocket/ws?uid="+${sessionScope.uid});
 		} else if ('MozWebSocket' in window) {
-			websocket = new MozWebSocket("ws://localhost:8080/Spring-websocket/ws"+${sessionScope.uid});
+			websocket = new MozWebSocket("ws://localhost:8080/spring_websocket/ws"+${sessionScope.uid});
 		} else {
-			websocket = new SockJS("http://localhost:8080/Spring-websocket/ws/sockjs"+${sessionScope.uid});
+			websocket = new SockJS("http://localhost:8080/spring_websocket/ws/sockjs"+${sessionScope.uid});
 		}
-        //var websocket = new WebSocket('ws://localhost:8080/Spring-websocket/ws');
+        //var websocket = new WebSocket('ws://localhost:8080/spring_websocket/ws');
         websocket.onmessage = function(event) {
        	 var data=JSON.parse(event.data);
        	 	if(data.from>0||data.from==-1){//用户或者群消息
