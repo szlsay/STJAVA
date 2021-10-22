@@ -16,6 +16,7 @@
         <module>tensquare_eureka</module>
         <module>tensquare_encrypt</module>
         <module>tensquare_notice</module>
+        <module>netty_demo</module>
     </modules>
 
     <parent>

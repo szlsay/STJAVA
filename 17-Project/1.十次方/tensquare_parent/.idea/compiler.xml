@@ -14,10 +14,12 @@
         <module name="tensquare_user" />
         <module name="tensquare_article" />
         <module name="tensquare_eureka" />
+        <module name="netty_demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mongo_demo" target="1.8" />
+      <module name="netty_demo" target="1.8" />
       <module name="tensquare_article" target="1.8" />
       <module name="tensquare_common" target="1.8" />
       <module name="tensquare_encrypt" target="1.8" />
@@ -30,6 +32,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mongo_demo" options="-parameters" />
+      <module name="netty_demo" options="-parameters" />
       <module name="tensquare_article" options="-parameters" />
       <module name="tensquare_common" options="-parameters" />
       <module name="tensquare_encrypt" options="-parameters" />
