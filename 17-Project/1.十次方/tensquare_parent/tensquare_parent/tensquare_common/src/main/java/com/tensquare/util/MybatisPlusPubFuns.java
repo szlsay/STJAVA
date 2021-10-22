@@ -1,6 +1,6 @@
 package com.tensquare.util;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 
 import java.util.Map;
 
@@ -12,8 +12,8 @@ public class MybatisPlusPubFuns {
      * @param <T>
      * @return
      */
-    public static <T> QueryWrapper<T> createEntityWrapper(Map whereMap) {
-        QueryWrapper<T> qw = new QueryWrapper<T>();
+    public static <T> EntityWrapper<T> createEntityWrapper(Map whereMap) {
+        EntityWrapper<T> qw = new EntityWrapper<T>();
 
         if(null != whereMap && 0 < whereMap.size()) {
             for(Object key : whereMap.keySet()) {

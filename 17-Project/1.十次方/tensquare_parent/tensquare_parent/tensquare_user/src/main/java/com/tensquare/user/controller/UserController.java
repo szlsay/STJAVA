@@ -1,9 +1,9 @@
 package com.tensquare.user.controller;
 
+import com.tensquare.entity.Result;
 import com.tensquare.user.pojo.User;
 import com.tensquare.user.service.UserService;
-import entity.Result;
-import entity.StatusCode;
+import com.tensquare.entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

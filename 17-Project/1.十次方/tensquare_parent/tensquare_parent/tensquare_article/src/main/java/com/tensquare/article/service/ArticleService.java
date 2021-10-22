@@ -1,136 +1,194 @@
 package com.tensquare.article.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
+import com.tensquare.article.client.NoticeClient;
 import com.tensquare.article.dao.ArticleDao;
 import com.tensquare.article.pojo.Article;
+import com.tensquare.article.pojo.Notice;
 import com.tensquare.util.IdWorker;
-import com.tensquare.util.MybatisPlusPubFuns;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
-/**
- * 服务层
- * 
- * @author Administrator
- *
- */
 @Service
 public class ArticleService {
 
-	@Autowired
-	private ArticleDao articleDao;
-	
-	@Autowired
-	private IdWorker idWorker;
+    @Autowired
+    private ArticleDao articleDao;
 
-	/**
-	 * 查询全部列表
-	 * @return
-	 */
-	public List<Article> findAll() {
-		return articleDao.selectList(null);
-	}
+    @Autowired
+    private NoticeClient noticeClient;
 
-	
-	/**
-	 * 条件查询+分页
-	 * @param whereMap
-	 * @param page
-	 * @param size
-	 * @return
-	 */
-	public IPage<Article> findSearch(Map whereMap, int page, int size) {
-		QueryWrapper<Article> wapper = MybatisPlusPubFuns.createEntityWrapper(whereMap);
-		// 执行查询
-		IPage<Article> p = new Page<Article>(page, size);
-		p = articleDao.selectPage(p, wapper);
-		return p;
-	}
+    @Autowired
+    private IdWorker idWorker;
 
-	
-	/**
-	 * 条件查询
-	 * @param whereMap
-	 * @return
-	 */
-	public List<Article> findSearch(Map whereMap) {
-		QueryWrapper<Article> wapper = MybatisPlusPubFuns.createEntityWrapper(whereMap);
-		return articleDao.selectList(wapper);
-	}
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    public List<Article> findAll() {
+        Article article = articleDao.selectById(1);
+        return articleDao.selectList(null);
+    }
+
+    public Article findById(String articleId) {
+        return articleDao.selectById(articleId);
+    }
+
+    public void save(Article article) {
+        //TODO: 使用jwt鉴权获取当前用户的信息，用户id，也就是文章作者id
+        String userId = "3";
+        article.setUserid(userId);
+
+        //使用分布式id生成器
+        String id = idWorker.nextId() + "";
+        article.setId(id);
+
+        //初始化数据
+        article.setVisits(0);   //浏览量
+        article.setThumbup(0);  //点赞数
+        article.setComment(0);  //评论数
+
+        //新增
+        articleDao.insert(article);
+
+        //新增文章后，创建消息，通知给订阅者
 
 
-	@Autowired
-	private RedisTemplate redisTemplate;
+        //获取订阅者信息
+        //存放作者订阅者信息的集合key，里面存放订阅者id
+        String authorKey = "article_author_" + userId;
+        Set<String> set = redisTemplate.boundSetOps(authorKey).members();
 
-	/**
-	 * 根据ID查询实体
-	 * @param id
-	 * @return
-	 */
-	public Article findById(String id) {
-		Article article= (Article)redisTemplate.opsForValue().get("article_"+id);
-		if(article==null){
-			article=articleDao.selectById(id);//从数据库中查询
-			redisTemplate.opsForValue().set("article_"+id,article,10, TimeUnit.SECONDS);//放入缓存
+        // 给订阅者创建消息通知
+        for (String uid : set) {
+            // 创建消息对象
+            Notice notice = new Notice();
 
-			System.out.println("从数据库中查询并放入缓存");
-		}else{
-			System.out.println("从缓存中提取数据");
-		}
-		return article;
-	}
+            // 接收消息用户的ID
+            notice.setReceiverId(uid);
+            // 进行操作用户的ID
+            notice.setOperatorId(userId);
+            // 操作类型（评论，点赞等）
+            notice.setAction("publish");
+            // 被操作的对象，例如文章，评论等
+            notice.setTargetType("article");
+            // 被操作对象的id，例如文章的id，评论的id'
+            notice.setTargetId(id);
+            // 通知类型
+            notice.setType("sys");
 
-	/**
-	 * 增加
-	 * @param article
-	 */
-	public void add(Article article) {
-		article.setId( idWorker.nextId()+"" );
-		articleDao.insert(article);
-	}
+            noticeClient.save(notice);
+        }
 
-	/**
-	 * 修改
-	 * @param article
-	 */
-	public void update(Article article) {
-		redisTemplate.delete("article_"+article.getId());
-		articleDao.updateById(article);
-	}
 
-	/**
-	 * 删除
-	 * @param id
-	 */
-	public void deleteById(String id) {
-		redisTemplate.delete("article_"+id);
-		articleDao.deleteById(id);
-	}
+    }
 
-	/**
-	 * 文章审核
-	 * @param id
-	 */
-	@Transactional
-	public void examine(String id){
-		articleDao.examine(id);
-	}
+    public void updateById(Article article) {
+        // 根据主键id修改
+        articleDao.updateById(article);
 
-	/**
-	 * 点赞
-	 * @param id
-	 */
-	@Transactional
-	public void updateThumpup(String id){
-		articleDao.updateThumbup(id);
-	}
+        // 根据条件修改
+        // 创建条件对象
+        // EntityWrapper<Article> wrapper = new EntityWrapper<>();
+        // 设置条件
+        // wrapper.eq("id", article.getId());
+        // articleDao.update(article, wrapper);
+    }
 
+    public void deleteById(String articleId) {
+        articleDao.deleteById(articleId);
+    }
+
+    public Page<Article> findByPage(Map<String, Object> map, Integer page, Integer size) {
+        //设置查询条件
+        EntityWrapper<Article> wrapper = new EntityWrapper<>();
+        Set<String> keySet = map.keySet();
+        for (String key : keySet) {
+            // if (map.get(key) != null) {
+            //     wrapper.eq(key, map.get(key));
+            // }
+
+            //第一个参数是否把后面的条件加入到查询条件中
+            //和上面的if判断的写法是一样的效果，实现动态sql
+            wrapper.eq(map.get(key) != null, key, map.get(key));
+        }
+
+        //设置分页参数
+        Page<Article> pageData = new Page<>(page, size);
+
+        //执行查询
+        //第一个是分页参数，第二个是查询条件
+        List<Article> list = articleDao.selectPage(pageData, wrapper);
+
+        pageData.setRecords(list);
+
+        //返回
+        return pageData;
+    }
+
+    public Boolean subscribe(String articleId, String userId) {
+        //根据文章id查询文章作者id
+        String authorId = articleDao.selectById(articleId).getUserid();
+
+        //存放用户订阅信息的集合key，里面存放作者id
+        String userKey = "article_subscribe_" + userId;
+        //存放作者订阅者信息的集合key，里面存放订阅者id
+        String authorKey = "article_author_" + authorId;
+
+        //查询用户的订阅关系，是否有订阅该作者
+        Boolean flag = redisTemplate.boundSetOps(userKey).isMember(authorId);
+
+        if (flag == true) {
+            //如果订阅作者，就取消订阅
+            //在用户订阅信息的集合中，删除作者
+            redisTemplate.boundSetOps(userKey).remove(authorId);
+            //作者订阅者信息的集合中，删除订阅者
+            redisTemplate.boundSetOps(authorKey).remove(userId);
+
+            //返回false
+            return false;
+
+        } else {
+            //如果没有订阅作者，就进行订阅
+            //在用户订阅信息中，添加订阅的作者
+            redisTemplate.boundSetOps(userKey).add(authorId);
+            //在作者订阅者信息中，添加订阅者
+            redisTemplate.boundSetOps(authorKey).add(userId);
+
+            //返回true
+            return true;
+        }
+
+
+    }
+
+    //文章点赞
+    public void thumpup(String articleId, String userId) {
+        Article article = articleDao.selectById(articleId);
+        article.setThumbup(article.getThumbup() + 1);
+        articleDao.updateById(article);
+
+        //点赞成功后，需要发送消息给文章作者（点对点消息）
+        Notice notice = new Notice();
+        // 接收消息用户的ID
+        notice.setReceiverId(article.getUserid());
+        // 进行操作用户的ID
+        notice.setOperatorId(userId);
+        // 操作类型（评论，点赞等）
+        notice.setAction("publish");
+        // 被操作的对象，例如文章，评论等
+        notice.setTargetType("article");
+        // 被操作对象的id，例如文章的id，评论的id'
+        notice.setTargetId(articleId);
+        // 通知类型
+        notice.setType("user");
+
+        //保存消息
+        noticeClient.save(notice);
+    }
 }

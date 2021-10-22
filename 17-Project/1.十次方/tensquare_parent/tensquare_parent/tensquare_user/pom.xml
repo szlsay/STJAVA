@@ -28,7 +28,6 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatisplus-spring-boot-starter</artifactId>
             <version>1.0.5</version>
-<!--            <version>${mybatisplus-spring-boot-starter.version}</version>-->
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -37,11 +36,10 @@
         </dependency>
         <!-- mybatis-plus end -->
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-<!--            <version>3.0.4</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
