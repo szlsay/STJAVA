@@ -3,13 +3,14 @@ package com.tensquare.article.controller;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tensquare.article.pojo.Article;
 import com.tensquare.article.service.ArticleService;
-import com.tensquare.entity.PageResult;
-import com.tensquare.entity.Result;
-import com.tensquare.entity.StatusCode;
+import entity.PageResult;
+import entity.Result;
+import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Key;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +30,7 @@ public class ArticleController {
     @RequestMapping(value = "thumbup/{articleId}", method = RequestMethod.PUT)
     public Result thumbup(@PathVariable String articleId) {
         //TODO 使用JWT鉴权的方式获取当前用户的id
-        String userId = "4";
+        String userId = "1";
 
         //查询用户对文章的点赞信息，根据用户id和文章id
         String key = "thumbup_article_" + userId + "_" + articleId;
@@ -88,7 +89,7 @@ public class ArticleController {
 
         //封装分页返回对象
         PageResult<Article> pageResult = new PageResult<>(
-                (int)pageData.getTotal(), pageData.getRecords()
+                pageData.getTotal(), pageData.getRecords()
         );
 
         //返回数据

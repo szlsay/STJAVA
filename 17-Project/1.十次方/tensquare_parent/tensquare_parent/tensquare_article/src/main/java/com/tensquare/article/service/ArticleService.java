@@ -6,10 +6,16 @@ import com.tensquare.article.client.NoticeClient;
 import com.tensquare.article.dao.ArticleDao;
 import com.tensquare.article.pojo.Article;
 import com.tensquare.article.pojo.Notice;
-import com.tensquare.util.IdWorker;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import util.IdWorker;
 
 import java.util.List;
 import java.util.Map;
@@ -29,6 +35,9 @@ public class ArticleService {
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     public List<Article> findAll() {
         Article article = articleDao.selectById(1);
@@ -85,6 +94,11 @@ public class ArticleService {
             noticeClient.save(notice);
         }
 
+        //发消息给RabbitMQ，就是新消息的通知
+        //第一个参数是交换机名，使用之前完成的订阅功能的交换机
+        //第二个参数是路由键，使用时文章作者的id作为路由键
+        //第三个参数是消息内容，这里只完成新消息提醒，内容是文章id
+        rabbitTemplate.convertAndSend("article_subscribe", userId, id);
 
     }
 
@@ -135,6 +149,22 @@ public class ArticleService {
         //根据文章id查询文章作者id
         String authorId = articleDao.selectById(articleId).getUserid();
 
+        //1 创建Rabbit管理器
+        RabbitAdmin rabbitAdmin = new RabbitAdmin(rabbitTemplate.getConnectionFactory());
+
+        //2 声明Direct类型交换机，处理新增文章消息
+        DirectExchange exchange = new DirectExchange("article_subscribe");
+        rabbitAdmin.declareExchange(exchange);
+
+        //3 创建队列，每个用户都有自己的队列，通过用户id进行区分
+        Queue queue = new Queue("article_subscribe_" + userId, true);
+
+        //4 声明交换机和队列的绑定关系，需要确保队列只收到对应作者的新增文章消息
+        // 通过路由键进行绑定作者，队列只收到绑定作者的文章消息。
+        //第一个是队列，第二个是交换机，第三个是路由键作者id
+        Binding binding = BindingBuilder.bind(queue).to(exchange).with(authorId);
+
+
         //存放用户订阅信息的集合key，里面存放作者id
         String userKey = "article_subscribe_" + userId;
         //存放作者订阅者信息的集合key，里面存放订阅者id
@@ -150,6 +180,9 @@ public class ArticleService {
             //作者订阅者信息的集合中，删除订阅者
             redisTemplate.boundSetOps(authorKey).remove(userId);
 
+            //如果取消订阅，删除队列绑定关系
+            rabbitAdmin.removeBinding(binding);
+
             //返回false
             return false;
 
@@ -160,6 +193,10 @@ public class ArticleService {
             //在作者订阅者信息中，添加订阅者
             redisTemplate.boundSetOps(authorKey).add(userId);
 
+            // 如果订阅，声明要绑定的队列
+            rabbitAdmin.declareQueue(queue);
+            // 添加绑定关系
+            rabbitAdmin.declareBinding(binding);
             //返回true
             return true;
         }
@@ -190,5 +227,17 @@ public class ArticleService {
 
         //保存消息
         noticeClient.save(notice);
+
+        //1 创建Rabbit管理器
+        RabbitAdmin rabbitAdmin = new RabbitAdmin(rabbitTemplate.getConnectionFactory());
+
+        //2 创建队列，每个作者都有自己的队列，通过作者id进行区分
+        Queue queue = new Queue("article_thumbup_" + article.getUserid(), true);
+        rabbitAdmin.declareQueue(queue);
+
+        //3 发消息到队里中
+        rabbitTemplate.convertAndSend("article_thumbup_" + article.getUserid(), articleId);
+
+
     }
 }

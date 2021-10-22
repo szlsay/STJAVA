@@ -10,9 +10,11 @@ spring:
     password: 123456
   redis:
     host: localhost
+  rabbitmq:
+    host: localhost
 # Mybatis-Plus 配置
 mybatis-plus:
-#  mapper-locations: classpath:/mapper/*Mapper.xml
+  #  mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.tensquare.notice.pojo
   global-config:
@@ -20,7 +22,7 @@ mybatis-plus:
     db-column-underline: false
     refresh-mapper: true
     configuration:
-      map-underscore-to-camel-case: true # 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射
+      map-underscore-to-camel-case: true
       cache-enabled: true #配置的缓存的全局开关
       lazyLoadingEnabled: true #延时加载的开关
       multipleResultSetsEnabled: true #开启延时加载，否则按需加载属性

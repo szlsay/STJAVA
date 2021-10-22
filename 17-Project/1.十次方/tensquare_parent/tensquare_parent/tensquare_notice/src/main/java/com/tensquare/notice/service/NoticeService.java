@@ -8,10 +8,10 @@ import com.tensquare.notice.dao.NoticeDao;
 import com.tensquare.notice.dao.NoticeFreshDao;
 import com.tensquare.notice.pojo.Notice;
 import com.tensquare.notice.pojo.NoticeFresh;
-import com.tensquare.entity.Result;
+import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.tensquare.util.IdWorker;
+import util.IdWorker;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -91,10 +91,10 @@ public class NoticeService {
         noticeDao.insert(notice);
 
         //待推送消息入库，新消息提醒
-        NoticeFresh noticeFresh = new NoticeFresh();
-        noticeFresh.setNoticeId(id);//消息id
-        noticeFresh.setUserId(notice.getReceiverId());//待通知用户的id
-        noticeFreshDao.insert(noticeFresh);
+        // NoticeFresh noticeFresh = new NoticeFresh();
+        // noticeFresh.setNoticeId(id);//消息id
+        // noticeFresh.setUserId(notice.getReceiverId());//待通知用户的id
+        // noticeFreshDao.insert(noticeFresh);
     }
 
     public void updateById(Notice notice) {

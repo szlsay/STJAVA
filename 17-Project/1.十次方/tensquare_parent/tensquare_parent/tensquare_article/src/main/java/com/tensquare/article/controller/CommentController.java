@@ -2,8 +2,8 @@ package com.tensquare.article.controller;
 
 import com.tensquare.article.pojo.Comment;
 import com.tensquare.article.service.CommentService;
-import com.tensquare.entity.Result;
-import com.tensquare.entity.StatusCode;
+import entity.Result;
+import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;

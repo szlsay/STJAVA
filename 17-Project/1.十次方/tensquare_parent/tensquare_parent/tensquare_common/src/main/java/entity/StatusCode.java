@@ -1,4 +1,4 @@
-package com.tensquare.entity;
+package entity;
 
 public class StatusCode {
     public static final int OK=20000;//成功

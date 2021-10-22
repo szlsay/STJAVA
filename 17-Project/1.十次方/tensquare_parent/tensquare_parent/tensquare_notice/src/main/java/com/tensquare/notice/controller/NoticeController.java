@@ -1,12 +1,12 @@
 package com.tensquare.notice.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.tensquare.entity.PageResult;
-import com.tensquare.entity.Result;
-import com.tensquare.entity.StatusCode;
 import com.tensquare.notice.pojo.Notice;
 import com.tensquare.notice.pojo.NoticeFresh;
 import com.tensquare.notice.service.NoticeService;
+import entity.PageResult;
+import entity.Result;
+import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +35,7 @@ public class NoticeController {
         Page<Notice> pageData = noticeService.selectByPage(notice, page, size);
 
         PageResult<Notice> pageResult = new PageResult<>(
-                (int)pageData.getTotal(), pageData.getRecords()
+                pageData.getTotal(), pageData.getRecords()
         );
 
         return new Result(true, StatusCode.OK, "查询成功", pageResult);
@@ -67,7 +67,7 @@ public class NoticeController {
         Page<NoticeFresh> pageData = noticeService.freshPage(userId,page,size);
 
         PageResult<NoticeFresh> pageResult = new PageResult<>(
-                (int)pageData.getTotal(), pageData.getRecords()
+                pageData.getTotal(), pageData.getRecords()
         );
 
         return new Result(true, StatusCode.OK, "查询成功", pageResult);
